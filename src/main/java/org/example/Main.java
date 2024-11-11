@@ -1,25 +1,21 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        // Crear una lista vacía de vehículos para la automotora
-        ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
+        Automotora automotora = new Automotora("Mi Automotora", 1990, "Juan Perez");
 
-        // Crear una instancia de Automotora
-        Automotora automotora = new Automotora(listaVehiculos, "AutoExpress", 1995, "Juan Pérez");
+        // Cargar vehículos desde el archivo JSON
+        automotora.cargarVehiculosDesdeJson("vehiculos.json");
 
-        // Imprimir los detalles iniciales de la automotora
-        System.out.println("Detalles de la automotora:");
-        System.out.println(automotora.toString());
-
-        // Agregar vehículos directamente usando los métodos especializados
+        // Agregar nuevos vehículos
         automotora.agregarAuto("Rojo", 2020, "Toyota", 15000, "4", 120);
         automotora.agregarBicicleta("Azul", 2018, "Trek", 500, "Montaña");
         automotora.agregarCamion("Blanco", 2019, "Volvo", 30000, 2000);
 
         // Mostrar el inventario de vehículos
         automotora.mostrarInventario();
+
+        // Guardar el inventario actualizado en un archivo JSON
+        automotora.guardarVehiculosEnJson("vehiculos_actualizado.json");
     }
 }

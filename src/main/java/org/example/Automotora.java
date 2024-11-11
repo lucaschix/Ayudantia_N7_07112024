@@ -1,17 +1,17 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Automotora {
-
 	private List<Vehiculo> vehiculos;
 	private String nombre;
 	private int fechaFundacion;
 	private String dueño;
 
 	// Constructor
-	public Automotora(List<Vehiculo> vehiculos, String nombre, int fechaFundacion, String dueño) {
-		this.vehiculos = vehiculos;
+	public Automotora(String nombre, int fechaFundacion, String dueño) {
+		this.vehiculos = new ArrayList<>();
 		this.nombre = nombre;
 		this.fechaFundacion = fechaFundacion;
 		this.dueño = dueño;
@@ -25,42 +25,14 @@ public class Automotora {
 		this.vehiculos = vehiculos;
 	}
 
-	public String getNombre() {
-		return this.nombre;
+	public void cargarVehiculosDesdeJson(String archivoJson) {
+		this.vehiculos = GestorDeDatos.leerVehiculosDesdeJson(archivoJson);
+		System.out.println("Vehículos cargados desde " + archivoJson);
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void guardarVehiculosEnJson(String archivoJson) {
+		GestorDeDatos.guardarVehiculosEnJson(archivoJson, this.vehiculos);
 	}
-
-	public int getFechaFundacion() {
-		return this.fechaFundacion;
-	}
-
-	public void setFechaFundacion(int fechaFundacion) {
-		this.fechaFundacion = fechaFundacion;
-	}
-
-	public String getDueño() {
-		return this.dueño;
-	}
-
-	public void setDueño(String dueño) {
-		this.dueño = dueño;
-	}
-
-	// Método toString
-	@Override
-	public String toString() {
-		return "Automotora{" +
-				"vehiculos=" + vehiculos +
-				", nombre='" + nombre + '\'' +
-				", fechaFundacion=" + fechaFundacion +
-				", dueño='" + dueño + '\'' +
-				'}';
-	}
-
-	// Métodos especializados para agregar vehículos
 
 	public void agregarAuto(String color, int añoCreacion, String marca, int precio, String numPuertas, int caballosDeFuerza) {
 		Auto auto = new Auto(color, añoCreacion, marca, precio, numPuertas, caballosDeFuerza);
@@ -80,7 +52,6 @@ public class Automotora {
 		System.out.println("Camion agregado al inventario: " + camion);
 	}
 
-	// Método para mostrar el inventario de vehículos
 	public void mostrarInventario() {
 		System.out.println("\nInventario de vehículos:");
 		for (Vehiculo vehiculo : vehiculos) {
