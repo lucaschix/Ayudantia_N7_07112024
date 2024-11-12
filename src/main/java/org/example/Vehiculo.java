@@ -1,6 +1,15 @@
 package org.example;
 
-public class Vehiculo {
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "tipo")
+@JsonSubTypes({
+		@JsonSubTypes.Type(value = Auto.class, name = "Auto"),
+		@JsonSubTypes.Type(value = Bicicleta.class, name = "Bicicleta"),
+		@JsonSubTypes.Type(value = Camion.class, name = "Camion")
+})
+public abstract class Vehiculo {
 
 	private String color;
 	private int añoCreacion;

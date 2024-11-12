@@ -1,0 +1,27 @@
+[
+  {
+    "tipo": "Auto",
+    "color": "Negro",
+    "añoCreacion": 2021,
+    "marca": "Honda",
+    "precio": 20000,
+    "numPuertas": "4 puertas",
+    "caballosDeFuerza": 150
+  },
+  {
+    "tipo": "Bicicleta",
+    "color": "Verde",
+    "añoCreacion": 2023,
+    "marca": "Giant",
+    "precio": 600,
+    "tipoDeTerreno": "Ciudad"
+  },
+  {
+    "tipo": "Camion",
+    "color": "Azul",
+    "añoCreacion": 2020,
+    "marca": "Chevrolet",
+    "precio": 30000,
+    "cargaMaxima": 7000
+  }
+]
