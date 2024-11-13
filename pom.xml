@@ -1,26 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<dependencies>
+    <!-- Jackson para trabajar con JSON -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.15.1</version>
+    </dependency>
 
-    <groupId>org.example</groupId>
-    <artifactId>Ayudantia_N7_07112024</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <!-- JUnit 5 para pruebas unitarias -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
 
-    <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <!-- Mockito para crear mocks en pruebas unitarias -->
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>4.9.0</version> <!-- Usa la versión más reciente si es posible -->
+        <scope>test</scope>
+    </dependency>
 
-    <dependencies>
-        <!-- Dependencia de Jackson para trabajar con archivos JSON -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.15.1</version> <!-- Puedes cambiar a la última versión disponible -->
-        </dependency>
-    </dependencies>
-
-</project>
+    <!-- JMockit para pruebas unitarias (si aún lo necesitas) -->
+    <dependency>
+        <groupId>org.jmockit</groupId>
+        <artifactId>jmockit</artifactId>
+        <version>1.48</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>

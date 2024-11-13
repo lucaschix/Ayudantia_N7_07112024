@@ -4,30 +4,23 @@ public class Camion extends Vehiculo {
 
 	private int cargaMaxima;
 
-	// Constructor
+
+
+	// Constructor completo
 	public Camion(String color, int añoCreacion, String marca, int precio, int cargaMaxima) {
 		super(color, añoCreacion, marca, precio);
 		this.cargaMaxima = cargaMaxima;
 	}
 
-	public int getCargaMaxima() {
-		return this.cargaMaxima;
-	}
+	// Getters y setters
+	public int getCargaMaxima() { return cargaMaxima; }
+	public void setCargaMaxima(int cargaMaxima) { this.cargaMaxima = cargaMaxima; }
 
-	public void setCargaMaxima(int cargaMaxima) {
-		this.cargaMaxima = cargaMaxima;
-	}
-
-	// Método toString
 	@Override
 	public String toString() {
 		return "Camion{" +
-				"color='" + getColor() + '\'' +
-				", añoCreacion=" + getAñoCreacion() +
-				", marca='" + getMarca() + '\'' +
-				", precio=" + getPrecio() +
-				", cargaMaxima=" + cargaMaxima +
+				"cargaMaxima=" + cargaMaxima +
+				", " + super.toString() +
 				'}';
 	}
-
 }
