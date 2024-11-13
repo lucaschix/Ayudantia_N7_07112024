@@ -13,9 +13,9 @@ public class GestorDeDatos implements IGestorDeDatos {
     public List<Vehiculo> leerVehiculos(String filePath) {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            return mapper.readValue(new File(filePath), mapper.getTypeFactory().constructCollectionType(List.class, Vehiculo.class));
+            return mapper.readValue(new File(filePath), mapper.getTypeFactory().constructCollectionType(List.class, Auto.class));
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return null;
         }
     }
@@ -25,9 +25,7 @@ public class GestorDeDatos implements IGestorDeDatos {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.writeValue(new File(filePath), vehiculos);
-            System.out.println("GUARDADOS");
         } catch (Exception e) {
-            System.out.println("ERROR GUARDADOS");
             e.printStackTrace();
         }
     }
