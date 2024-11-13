@@ -25,7 +25,9 @@ public class GestorDeDatos implements IGestorDeDatos {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.writeValue(new File(filePath), vehiculos);
+            System.out.println("GUARDADOS");
         } catch (Exception e) {
+            System.out.println("ERROR GUARDADOS");
             e.printStackTrace();
         }
     }

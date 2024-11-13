@@ -1,18 +1,16 @@
 package org.example;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 
-@JsonTypeInfo(
-		use = JsonTypeInfo.Id.NAME,
-		include = JsonTypeInfo.As.PROPERTY,
-		property = "type" // Este campo identificará el tipo específico de Vehiculo
-)
+// Especifica que Jackson debe incluir un campo de tipo en la serialización
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+// Declara los subtipos conocidos que Jackson debe manejar
 @JsonSubTypes({
 		@JsonSubTypes.Type(value = Auto.class, name = "Auto"),
-		@JsonSubTypes.Type(value = Bicicleta.class, name = "Bicicleta"),
-		@JsonSubTypes.Type(value = Camion.class, name = "Camion")
+		@JsonSubTypes.Type(value = Bicicleta.class, name = "Bicicleta")
 })
+
 public abstract class Vehiculo {
 
 	private String color;
